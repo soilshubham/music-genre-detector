@@ -21,7 +21,20 @@ for folder in os.listdir(directory):
 
 def predict(audoFile):
     dataset, training_set, test_set = load_dataset("my.dat", 0.66)
-    _file = os.open(audoFile, os.O_RDWR)
+    _file = audoFile
+    (_rate, _sig) = wav.read(_file)
+    _mfcc_feat = mfcc(_sig, _rate, winlen=0.020, appendEnergy=False)
+    _covariance = np.cov(np.matrix.transpose(_mfcc_feat))
+    _mean_matrix = _mfcc_feat.mean(0)
+    _feature = (_mean_matrix, _covariance)
+
+    _pred = nearestClass(getNeighbors(dataset, _feature, 5))
+    return results[_pred]
+
+
+def predict_test(filename):
+    dataset, training_set, test_set = load_dataset("my.dat", 0.66)
+    _file = os.open(filename, os.O_RDWR)
     (_rate, _sig) = wav.read(_file)
     _mfcc_feat = mfcc(_sig, _rate, winlen=0.020, appendEnergy=False)
     _covariance = np.cov(np.matrix.transpose(_mfcc_feat))

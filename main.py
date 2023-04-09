@@ -1,3 +1,4 @@
+from flask import Flask, request, render_template
 from src.predict import predict
 from src.get_accuracy import getAccuracy
 from src.get_neighbors import getNeighbors
@@ -9,17 +10,16 @@ test_audio = 'data/genres_original/jazz/jazz.00022.wav'
 
 
 def main():
-    # train_model()
-    # dataset, training_set, test_set = load_dataset("my.dat", 0.66)
-    # leng = len(test_set)
-    # predictions = []
-    # for x in range(leng):
-    #     predictions.append(nearestClass(
-    #         getNeighbors(training_set, test_set[x], 10)))
+    train_model()
+    dataset, training_set, test_set = load_dataset("my.dat", 0.66)
+    leng = len(test_set)
+    predictions = []
+    for x in range(leng):
+        predictions.append(nearestClass(
+            getNeighbors(training_set, test_set[x], 10)))
 
-    # accuracy1 = getAccuracy(test_set, predictions)
-    # print('Accuracy of model: ', round(accuracy1*100, 2))
-    predict(test_audio)
+    accuracy = getAccuracy(test_set, predictions)
+    print('Accuracy of model: ', round(accuracy*100, 2), '%')
 
 
 if __name__ == '__main__':
