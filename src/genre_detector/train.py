@@ -1,16 +1,26 @@
 import os
-import random
 import pickle
+from typing import Optional
 import scipy.io.wavfile as wav
 import numpy as np
-from scipy.io import wavfile
 from python_speech_features import mfcc
-from collections import defaultdict
 
-directory = "data/genres_original/"
+from .model import getAccuracy
 
+def train(directory: str, accuracy: Optional[bool] = False) -> None:
+    """
+    Trains a K-Nearest Neighbors (K-NN) model for genre recognition and saves it in a binary file 'my.dat'.
+    
+    Parameters:
+    -----------
+    1. directory (str): A string representing the path to the directory containing the audio files dataset.
+    2. accuracy(bool, optional) : A flag indicating whether to calculate and print model accuracy.
+    
+    Returns:
+    --------
+    None
+    """
 
-def train_model():
     f = open("my.dat", 'wb')
     i = 0
 
@@ -27,6 +37,11 @@ def train_model():
             feature = (mean_matrix, covariance, i)
             pickle.dump(feature, f)
 
-    # os.system('cls')
     print('Training complete!')
+
+    # Getting accuracy
+    if accuracy:
+        accuracy = getAccuracy()
+        print('Model accuracy: ', round(accuracy*100, 2), '%')
+
     f.close()
