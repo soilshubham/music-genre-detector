@@ -2,57 +2,36 @@
 <html>
 
 <head>
-    <title>Audio Processing Results</title>
-    <style>
-        *,
-        *:before,
-        *:after {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            font-family: 'Inter', Arial, Helvetica, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            gap: 4rem;
-            margin: 3rem auto;
-        }
-
-        .container h1 {
-            font-size: 64px;
-            text-align: center;
-        }
-
-        .result-container {
-            padding: 1rem 2rem;
-            font-size: 20px;
-            font-weight: 700;
-            display: flex;
-            flex-direction: row;
-            gap: 5rem;
-        }
-
-        .result-container span {
-            font-weight: 500;
-            background-color: #f5f5f5;
-            padding: 10px 18px;
-            border: solid #bcbcbc 1px;
-            border-radius: 200px;
-            margin-left: 0.5rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wtf-forms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{{ genre }} - Genre</title>
 </head>
 
-<body>
+<body class="{{ genre }}">
     <div class="container">
         <h1>Music Genre Detection</h1>
         <div class="result-container">
-            <p>Genre: <span>{{ genre }}</span></p>
-            <p>Accuracy: <span>{{ confidence }}%</span></p>
+            <div class="genre">
+                <p>Detected Genre</p>
+                <h2 class="{{ genre }}">{{ genre }}</h2>
+            </div>
+            <div class="audio-player">
+                <audio controls>
+                    <source src="{{ url_for('play_audio', filename=audio_file) }}" type="audio/ogg">
+                    <source src="{{ url_for('play_audio', filename=audio_file) }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="accuracy">
+                <p>Accuracy: {{ confidence }}%</p>
+            </div>
         </div>
     </div>
 </body>

@@ -1,0 +1,154 @@
+/* ========== Global ============ */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* ========== Home page ============ */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 4rem;
+    margin: 3rem auto;
+    max-width: 60rem;
+
+}
+
+.container h1 {
+    font-size: 64px;
+    text-align: center;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    max-width: 30rem;
+    width: 100%;
+}
+
+.container input[type=file] {
+    background-color: rgb(176, 214, 239);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+.container form .file {
+    width: 100%;
+
+}
+
+.container input[type=submit] {
+    background-color: #1d74ff;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.1s ease-in;
+}
+
+.container input[type=submit]:hover {
+    background-color: #2f7fff;
+}
+
+.file-custom::after {
+    content: attr(data-file-name);
+}
+
+/* ========== Results page ============ */
+body.blues{
+    background-color: #edf7ff;
+}
+body.hiphop{
+    background-color: #f4ecff;
+}
+body.country{
+    background-color: #fff8ef;
+}
+body.disco{
+    background-color: #eeffee;
+}
+body.classical{
+    background-color: #ebf9ff;
+}
+body.jazz{
+    background-color: #fff1f1;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.result-container .genre {
+    font-size: 32px;
+    text-align: center;
+}
+
+.result-container p {
+    font-size: 18px;
+}
+
+.result-container .genre h2 {
+    margin: 1rem 0 0;
+    font-size: 72px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.result-container .genre h2.blues {
+    color: #4c55ff;
+}
+
+.result-container .genre h2.hiphop {
+    color: #a742ff;
+}
+
+.result-container .genre h2.country {
+    color: #fd8931;
+}
+
+.result-container .genre h2.disco {
+    color: #36cc4a;
+}
+
+.result-container .genre h2.classical {
+    color: #34bb9e;
+}
+
+.result-container .genre h2.jazz {
+    color: #ff4949;
+}
+
+.result-container .accuracy p {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 6px 1rem;
+    border-radius: 300px;
+    border: solid rgba(0, 0, 0, 0.501) 1px;
+    font-size: 12px;
+}
+
+.result-container .audio-player {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.result-container .audio-player audio {
+    width: 100%;
+    border: solid rgba(0, 0, 0, 0.501) 1px;
+    border-radius: 300px;
+}

@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template
-from src.predict import predict
-from src.get_accuracy import getAccuracy
-from src.get_neighbors import getNeighbors
-from src.nearest_class import nearestClass
-from src.train import train_model
-from src.load_dataset import load_dataset
+from genre_detector.predict import predict
+from genre_detector.get_accuracy import getAccuracy
+from genre_detector.get_neighbors import getNeighbors
+from genre_detector.nearest_class import nearestClass
+from genre_detector.train import train_model
+from genre_detector.load_dataset import load_dataset
 
 test_audio = 'data/genres_original/jazz/jazz.00022.wav'
 

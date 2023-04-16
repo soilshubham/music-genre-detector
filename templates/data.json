@@ -1,0 +1,54 @@
+{
+    "Blues": [
+        {
+            "name": "Mannish Boy",
+            "link": "https://www.youtube.com/watch?v=n7GyLrTrWzs",
+            "thumb": "images/thumbnail/blues_001"
+        },
+        {
+            "name": "Sweet Home Chicago",
+            "link": "https://www.youtube.com/watch?v=JZBj9M1jO5c",
+            "thumb": "images/thumbnail/blues_002"
+        },
+        {
+            "name": "The Thrill Is Gone",
+            "link": "https://www.youtube.com/watch?v=fH8oMQbVcDQ",
+            "thumb": "images/thumbnail/blues_003"
+        },
+        {
+            "name": "Crossroads",
+            "link": "https://www.youtube.com/watch?v=VMnjF1O4eH0",
+            "thumb": "images/thumbnail/blues_004"
+        },
+        {
+            "name": "Stormy Monday",
+            "link": "https://www.youtube.com/watch?v=bu3rsha1ZtI",
+            "thumb": "images/thumbnail/blues_005"
+        },
+        {
+            "name": "Hoochie Coochie Man",
+            "link": "https://www.youtube.com/watch?v=5mV_HHL-h6g",
+            "thumb": "images/thumbnail/blues_006"
+        },
+        {
+            "name": "Red House",
+            "link": "https://www.youtube.com/watch?v=Kc2Q1WbDsGk",
+            "thumb": "images/thumbnail/blues_007"
+        },
+        {
+            "name": "I'd Rather Go Blind",
+            "link": "https://www.youtube.com/watch?v=SHwlZRiTwgk",
+            "thumb": "images/thumbnail/blues_008"
+        },
+        {
+            "name": "Born Under a Bad Sign",
+            "link": "https://www.youtube.com/watch?v=OOJz1vnRiSA",
+            "thumb": "images/thumbnail/blues_009"
+        },
+        {
+            "name": "Statesboro Blues",
+            "link": "https://www.youtube.com/watch?v=UoxP6JhHQxU",
+            "thumb": "images/thumbnail/blues_010"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 import operator
-from src.distance import distance
+from genre_detector.distance import distance
 
 
 def getNeighbors(trainingSet, instance, k):

@@ -4,9 +4,9 @@ import numpy as np
 from scipy.io import wavfile
 from python_speech_features import mfcc
 from collections import defaultdict
-from src.get_neighbors import getNeighbors
-from src.load_dataset import load_dataset
-from src.nearest_class import nearestClass
+from genre_detector.get_neighbors import getNeighbors
+from genre_detector.load_dataset import load_dataset
+from genre_detector.nearest_class import nearestClass
 
 from collections import defaultdict
 
