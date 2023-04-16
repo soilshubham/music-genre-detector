@@ -1,16 +1,16 @@
+import os
 from typing import Tuple, List, Any
 import pickle
 import random
 
 
-def load_dataset(filePath: str, split: float) -> Tuple[List[Any], List[Any], List[Any]]:
+def load_dataset(split: float) -> Tuple[List[Any], List[Any], List[Any]]:
     """
-    Loads a dataset from a file and splits it into training and test sets.
+    Loads the trained dataset and splits it into training and test sets.
 
     Parameters:
     -----------
-    1. filePath (str): The path of the file containing the dataset.
-    2. split (float): The fraction of the dataset to use for training.
+    1. split (float): The fraction of the dataset to use for training.
 
     Returns:
     --------
@@ -20,7 +20,10 @@ def load_dataset(filePath: str, split: float) -> Tuple[List[Any], List[Any], Lis
 
     dataset = []
 
-    with open(filePath, 'rb') as f:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    dataset_path = os.path.join(current_dir, 'my.dat')
+
+    with open(dataset_path, 'rb') as f:
         while True:
             try:
                 dataset.append(pickle.load(f))

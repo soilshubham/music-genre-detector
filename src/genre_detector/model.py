@@ -104,7 +104,7 @@ def getAccuracy() -> float:
     that are correctly classified by the algorithm.
     """
 
-    dataset, training_set, test_set = load_dataset("my.dat", 0.66)
+    dataset, training_set, test_set = load_dataset(0.66)
     leng = len(test_set)
     predictions = []
 

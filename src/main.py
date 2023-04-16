@@ -1,7 +1,8 @@
 import os
 import genre_detector as gd
 import sys
-sys.path.append('/path/to/src/')
+
+sys.path.append('/path/to/src/genre_detector')
 
 datasetDir = os.path.join(os.path.dirname(
     __file__), '..', 'data/genres_original/')

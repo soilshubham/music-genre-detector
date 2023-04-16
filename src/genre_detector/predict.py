@@ -15,6 +15,7 @@ results = {
     6: 'jazz'
 }
 
+
 def predict(audioFile: str) -> str:
     """
     Given an audio file, predicts the genre of the audio by extracting
@@ -29,7 +30,7 @@ def predict(audioFile: str) -> str:
     str: The predicted genre of the audio file as a string.
     """
 
-    dataset, training_set, test_set = load_dataset("my.dat", 0.66)
+    dataset, training_set, test_set = load_dataset(0.66)
     _file = audioFile
     (_rate, _sig) = wav.read(_file)
     _mfcc_feat = mfcc(_sig, _rate, winlen=0.020, appendEnergy=False)
@@ -57,7 +58,7 @@ def predict_test(audioFile: str) -> str:
     str: The predicted genre of the audio file as a string.
     """
 
-    dataset, training_set, test_set = load_dataset("my.dat", 0.66)
+    dataset, training_set, test_set = load_dataset(0.66)
     _file = os.open(audioFile, os.O_RDWR)
     (_rate, _sig) = wav.read(_file)
     _mfcc_feat = mfcc(_sig, _rate, winlen=0.020, appendEnergy=False)

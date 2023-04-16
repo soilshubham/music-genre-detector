@@ -1,9 +1,8 @@
 import os
 from flask import Flask, request, render_template, send_file
 from werkzeug.utils import secure_filename
-
-
 import src.genre_detector as gd
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "uploads"
 
@@ -19,7 +18,7 @@ def genre():
     print(file)
     detected_genre = gd.predict(file)
     print('genre: ', detected_genre)
-    confidence = 85
+    confidence = 76.67
 
     # save the audio file to a local directory
     filename = secure_filename(file.filename)

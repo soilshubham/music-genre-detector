@@ -7,21 +7,25 @@ from python_speech_features import mfcc
 
 from .model import getAccuracy
 
+
 def train(directory: str, accuracy: Optional[bool] = False) -> None:
     """
     Trains a K-Nearest Neighbors (K-NN) model for genre recognition and saves it in a binary file 'my.dat'.
-    
+
     Parameters:
     -----------
     1. directory (str): A string representing the path to the directory containing the audio files dataset.
     2. accuracy(bool, optional) : A flag indicating whether to calculate and print model accuracy.
-    
+
     Returns:
     --------
     None
     """
 
-    f = open("my.dat", 'wb')
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    dataset_path = os.path.join(current_dir, 'my.dat')
+
+    f = open(dataset_path, 'wb')
     i = 0
 
     print('training...')

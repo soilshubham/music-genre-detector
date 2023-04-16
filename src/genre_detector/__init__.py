@@ -18,7 +18,7 @@ Usage example:
     Training complete!
     Model accuracy: 86.67%
     >>> genre_detection.predict("myaudio.wav")
-    'Rock'
+    'disco'
 """
 
 from .train import train
